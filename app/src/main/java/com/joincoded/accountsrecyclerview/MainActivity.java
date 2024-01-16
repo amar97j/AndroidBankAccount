@@ -1,6 +1,8 @@
 package com.joincoded.accountsrecyclerview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private CurrenciesAdapter currenciesAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         currencyList.add(new Currency("EGP", "Egypt", 3.52));
         currencyList.add(new Currency("OMR", "Omani Rial", 2.6));
         currencyList.add(new Currency("QAR", "Qatar Rial", 0.27));
-        currencyList.add(new Currency("RUB", "Russian Ruble", 0.011));
+        currencyList.add(new Currency(" RUB", "Russian Ruble", 0.011));
         currencyList.add(new Currency("QAR", "Qatar Rial", 0.27));
         currencyList.add(new Currency("RSD", "Serbian Dinar", 0.093));
         currencyList.add(new Currency("LKR", "Sri lanka", 0.003));

@@ -5,46 +5,66 @@
     android:layout_width="match_parent"
     android:layout_height="80dp"
     android:layout_margin="5dp"
-    android:background="#E1A7BB">
+    android:background="#232222">
+
 
     <TextView
         android:id="@+id/currencyNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="179dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-black"
         android:includeFontPadding="false"
         android:text="Currency Name"
+        android:textColor="#DCD2D2"
         android:textSize="16sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/currencyCodeTextView"
-        app:layout_constraintEnd_toStartOf="@+id/exchangeRateTextView"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/currencyCodeTextView" />
-
-    <TextView
-        android:id="@+id/exchangeRateTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:text="Exchange Rate"
-        android:textSize="16sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/currencyNameTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/currencyNameTextView" />
+        app:layout_constraintStart_toEndOf="@+id/flageImgeView"
+        app:layout_constraintTop_toBottomOf="@+id/currencyCodeTextView" />
 
     <TextView
         android:id="@+id/currencyCodeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-black"
         android:text="Currency Code"
+        android:textColor="#EAE5E5"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/currencyNameTextView"
+        app:layout_constraintEnd_toStartOf="@+id/exchangeRateTextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/flageImgeView"
+        app:layout_constraintTop_toTopOf="@+id/exchangeRateTextView" />
+
+    <ImageView
+        android:id="@+id/flageImgeView"
+        android:layout_width="43dp"
+        android:layout_height="37dp"
+        app:layout_constraintEnd_toStartOf="@+id/currencyCodeTextView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/currencyCodeTextView"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/exchangeRateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="35dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Exchange Rate"
+        android:textColor="#EFEAEA"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/currencyCodeTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

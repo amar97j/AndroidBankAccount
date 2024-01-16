@@ -3,6 +3,7 @@ package com.joincoded.accountsrecyclerview;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -35,17 +36,17 @@ public class CurrenciesAdapter extends RecyclerView.Adapter<CurrenciesAdapter.Cu
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return currenciesList.size();
     }
 
-//    public void setCurrenciesList(List<Currency> dummyData) {
-//    }
 
     public class CurrencyViewHolder extends RecyclerView.ViewHolder {
         private TextView currencyCodeTextView;
         private TextView currencyNameTextView;
         private TextView exchangeRateTextView;
+        private ImageView flageImgeView;
 
 
 
@@ -57,13 +58,35 @@ public class CurrenciesAdapter extends RecyclerView.Adapter<CurrenciesAdapter.Cu
             currencyCodeTextView = itemView.findViewById(R.id.currencyCodeTextView);
             currencyNameTextView = itemView.findViewById(R.id.currencyNameTextView);
             exchangeRateTextView = itemView.findViewById(R.id.exchangeRateTextView);
+            flageImgeView = itemView.findViewById(R.id.flageImgeView);
         }
 
         public void bind(Currency currency) {
             currencyCodeTextView.setText(currency.getCurrencyCode());
             currencyNameTextView.setText(currency.getCurrencyName());
             exchangeRateTextView.setText(String.valueOf(currency.getExchangeRate()));
+            flageImgeView.setImageResource(getFlagResourceId(currency.getCurrencyCode()));
 
+
+        }
+
+        private int getFlagResourceId(String currencyCode) {
+            switch (currencyCode) {
+                case "KWD":
+                    return R.drawable.download;
+                case "EUR":
+                    return R.drawable.euro;
+                case "RS":
+                    return R.drawable.saudi;
+                case "EGP":
+                    return R.drawable.egyp;
+                case "OMR":
+                    return R.drawable.oman;
+                case "QAR":
+                    return R.drawable.qatar;
+                default:
+                    return R.drawable.download;
+            }
 
         }
     }
